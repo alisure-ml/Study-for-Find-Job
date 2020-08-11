@@ -53,11 +53,22 @@ for i in range(n):
 fdis = 0
 for i1 in range(n):
     for j1 in range(m):
+        if maze[i1][j1] == "#":
+            continue
         for i2 in range(n):
             for j2 in range(m):
+                if maze[i2][j2] == "#":
+                    continue
                 begin = Point(i1, j1)
                 end = Point(i2, j2)
                 dis = bfs(maze, begin, end)
                 if fdis < dis < MAX_VALUE:
                     fdis = dis
 print fdis
+
+"""
+3 3
+...
+.##
+...
+"""
